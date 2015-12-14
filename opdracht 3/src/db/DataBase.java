@@ -18,7 +18,6 @@ public class DataBase {
         ListItems = new Vector<Item>();
         ListKlanten = new Vector<Klant>();
         ListUitleenItem = new Vector<UitleenItem>();
-        VoegItemToe(new CD("lala", 100, "lolo"));
     }
  
     public void VoegItemToe(Item item) {

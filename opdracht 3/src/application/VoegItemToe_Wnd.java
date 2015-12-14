@@ -54,9 +54,6 @@ public class VoegItemToe_Wnd extends JDialog {
 		lblNaam.setBounds(12, 127, 74, 16);
 		contentPane.add(lblNaam);
 
-		JLabel lblIdNummer = new JLabel("Id nummer:");
-		lblIdNummer.setBounds(12, 81, 74, 16);
-		contentPane.add(lblIdNummer);
 
 		JLabel lblSoortItem = new JLabel("Soort item:");
 		lblSoortItem.setBounds(12, 32, 74, 16);
@@ -67,11 +64,6 @@ public class VoegItemToe_Wnd extends JDialog {
 		contentPane.add(txtNaam);
 		txtNaam.setColumns(10);
 
-		txtIdNummer = new JTextField();
-		txtIdNummer.setColumns(10);
-		txtIdNummer.setBounds(92, 78, 328, 22);
-		contentPane.add(txtIdNummer);
-
 		JComboBox cmbSoortItem = new JComboBox(EnumItems.values());
 		cmbSoortItem.setEditable(false);
 		cmbSoortItem.setBounds(92, 29, 328, 22);
@@ -80,16 +72,15 @@ public class VoegItemToe_Wnd extends JDialog {
 		JButton btnItemToevoegen = new JButton("Toevoegen");
 		btnItemToevoegen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int id = Integer.parseInt(txtIdNummer.getText());
 				String titel = txtNaam.getText();
 				String beschrijving = txtBeschrijving.getText();
 
 				if (cmbSoortItem.getSelectedItem().toString() == "CD") {
-					myItem = new CD(titel, id, beschrijving);
+					myItem = new CD(titel, beschrijving);
 				} else if (cmbSoortItem.getSelectedItem().toString() == "DVD") {
-					myItem = new Movie(titel, id, beschrijving);
+					myItem = new Movie(titel, beschrijving);
 				} else if (cmbSoortItem.getSelectedItem().toString() == "Game") {
-					myItem = new Game(titel, id, beschrijving);
+					myItem = new Game(titel, beschrijving);
 				}
 				setVisible(false);
 			}

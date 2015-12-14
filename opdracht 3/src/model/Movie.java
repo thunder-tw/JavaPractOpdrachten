@@ -2,9 +2,9 @@ package model;
 
 public class Movie extends Item {
 
-	public Movie(String titel, int id, String beschrijving) {
+	public Movie(String titel, String beschrijving) {
 
-		super(titel, id, 2, beschrijving);
+		super(titel, 2, beschrijving);
 
 	}
 	

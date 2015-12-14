@@ -9,7 +9,7 @@ import model.Item;
 
 public class ItemTableModel extends DefaultTableModel {
 	
-	private String [] columnnames = {"Type","ID", "Title", "TerugkeerDatum"};
+	private String [] columnnames = {"ID","Type", "Title", "TerugkeerDatum"};
 	private DataBase db;
 	
 	public ItemTableModel(DataBase db)
@@ -26,9 +26,10 @@ public class ItemTableModel extends DefaultTableModel {
 		Object[][] data = new Object[itemList.size()][4];
 		for (int i = 0; i < itemList.size();i++ )
 		{
+			int id = i;
 			Item item = itemList.get(i);
+			data[i][1] = id;
 			data[i][0] = item.getType();
-			data[i][1] = item.getID();
 			data[i][2] = item.getTitle();
 			data[i][3] = item.getTerugKeerDatum();	
 		}

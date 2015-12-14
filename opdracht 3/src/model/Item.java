@@ -8,9 +8,8 @@ public abstract class Item {
  
     String beschrijving;
  
-    public Item(String Titel, Integer Id, double Prijs, String Beschrijving) {
+    public Item(String Titel, double Prijs, String Beschrijving) {
         this.titel = Titel;
-        this.id = Id;
         this.dagPrijs = Prijs;
         this.beschrijving = Beschrijving;
     }
