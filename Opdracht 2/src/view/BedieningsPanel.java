@@ -1,4 +1,4 @@
-package ui;
+package view;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -47,7 +47,8 @@ public class BedieningsPanel extends JPanel{
    } 
    
    public void setSysmboolForSlotButton(int index, char symbool){
-	   slotButtons[index].setText(symbool+"");
+	   if( slotButtons[index] != null )
+		   slotButtons[index].setText(symbool+"");
    }
    
    public void setTekstForControleButton(String tekst){
@@ -81,7 +82,7 @@ public class BedieningsPanel extends JPanel{
 	}
 	
 	public void updateLogTekst(String lijn){
-		String logTekst = lijn+"\n"+log.getText();
+		String logTekst = log.getText() + "\n" + lijn;//lijn+"\n"+log.getText();
 		log.setText(logTekst);
 	}
   } 

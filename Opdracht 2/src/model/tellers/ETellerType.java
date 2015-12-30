@@ -1,13 +1,13 @@
-package domain.tellers;
+package model.tellers;
 
-public enum TellerType {
+public enum ETellerType {
 	CYCLISCH ("Cyclische teller", "domain.tellers.CyclischeTeller"),
 	TERUGLOOP ("Terugloop teller", "domain.tellers.TerugLoopTeller");		
 
 	private final String omschrijving;   
 	private final String klasseNaam; 
 		
-	TellerType(String omschrijving, String klasseNaam) {
+	ETellerType(String omschrijving, String klasseNaam) {
 	    this.omschrijving = omschrijving;
 	    this.klasseNaam = klasseNaam;
 	}

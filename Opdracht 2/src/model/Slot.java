@@ -1,7 +1,8 @@
-package domain;
+package model;
 
 import java.util.ArrayList;
-import domain.tellers.Teller;
+
+import model.tellers.Teller;
 
 public class Slot {
 	

@@ -1,10 +1,11 @@
 package applicatie;
 
-import domain.*;
-import domain.tellers.*;
+import model.*;
+import model.tellers.*;
+
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import controller.SlotController;
+import view.controller.SlotController;
 
 public class Launcher{
 

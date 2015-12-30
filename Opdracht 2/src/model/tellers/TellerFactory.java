@@ -1,9 +1,9 @@
-package domain.tellers;
+package model.tellers;
 
 import java.lang.reflect.Constructor;
 
 
-public class TellerTypeFactory {
+public class TellerFactory {
 	public static Teller createTellerType(
                                       String type, Object... args){
 		Teller instance = null;

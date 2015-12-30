@@ -1,9 +1,10 @@
 package applicatie;
-import domain.*;
-import domain.tellers.*;
+import model.*;
+import model.tellers.*;
+
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import controller.SlotController;
+import view.controller.SlotController;
 
 public class Main
 {
@@ -26,7 +27,7 @@ public class Main
        inside the array you pass to the new instance method     
        */
     		  
-      Teller t4 = TellerTypeFactory.createTellerType(TellerType.CYCLISCH.getKlasseNaam(),passed);
+      Teller t4 = TellerFactory.createTellerType(ETellerType.CYCLISCH.getKlasseNaam(),passed);
       ArrayList<Teller>tellers =new ArrayList<Teller>();
       tellers.add(t1); tellers.add(t2); tellers.add(t3);tellers.add(t4);
       Slot slot =new Slot(tellers,"a4+z");

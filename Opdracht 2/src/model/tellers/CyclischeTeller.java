@@ -1,4 +1,4 @@
-package domain.tellers;
+package model.tellers;
 
 public class CyclischeTeller extends Teller {
 

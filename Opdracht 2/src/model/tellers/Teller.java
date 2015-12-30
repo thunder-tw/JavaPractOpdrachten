@@ -1,4 +1,4 @@
-package domain.tellers;
+package model.tellers;
 
 import java.io.Serializable;
 public abstract class Teller implements Cloneable, Serializable{
