@@ -77,7 +77,8 @@ public class Slot {
 	 */
 	public boolean isGeheimGevonden()
 	{
-		if (getSlotKombinatie() == geheimeCode)
+		//String test = getSlotKombinatie();
+		if (getSlotKombinatie().compareTo(geheimeCode) == 0)
 		{
 			return true;
 		}

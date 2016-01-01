@@ -10,7 +10,7 @@ import view.controller.SlotController;
 public class Launcher{
 
    public static void main( String[] args ){
-      JFrame bedieningVenster = new JFrame( "Knack die code" );
+      JFrame bedieningVenster = new JFrame( "Knack die code L" );
       
       Teller t1= new CyclischeTeller('a','b','c');
       Teller t2=new TerugLoopTeller();

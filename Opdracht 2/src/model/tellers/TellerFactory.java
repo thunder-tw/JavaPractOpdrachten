@@ -30,5 +30,17 @@ public class TellerFactory {
 		catch (Exception ex){System.out.println(ex.getMessage());}
 		return instance;
 	}
+
+	public static Teller createTellerType(ETellerType type, char... displayWaarden) {
+		switch(type)
+		{
+		case CYCLISCH:
+			return new CyclischeTeller(displayWaarden);
+			
+		case TERUGLOOP:
+			return new TerugLoopTeller(displayWaarden);
+		}
+		return null;
+	}
 }
 

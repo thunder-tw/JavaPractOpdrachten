@@ -3,15 +3,15 @@ package model.tellers;
 import java.io.Serializable;
 public abstract class Teller implements Cloneable, Serializable{
 	
-	private static final long serialVersionUID = 1L;
-	private Character[] mogelijkeWaarden;
+private static final long serialVersionUID = 1L;
+	private char[] mogelijkeWaarden;
 	private int huidigeIndex;
 
 	public Teller(){
 		this('0','1','2','3','4','5','6','7','8','9');
 	}
 	
-	public Teller(Character...waarden){
+	public Teller(char...waarden){
 		this.mogelijkeWaarden = waarden;
 	}
 	
@@ -19,12 +19,16 @@ public abstract class Teller implements Cloneable, Serializable{
 			return mogelijkeWaarden[huidigeIndex];
 	}	
 	
-	protected Character[] getMogelijkeWaarden(){
+	protected char[] getMogelijkeWaarden(){
 		return mogelijkeWaarden;
 	}
 	
 	protected int getHuidigeIndex(){
 		return huidigeIndex;
+	}
+	
+	protected int getMaxIndex(){
+		return mogelijkeWaarden.length;
 	}
 	
 	protected void setHuidigeIndex(int index){

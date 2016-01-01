@@ -68,13 +68,15 @@ public class SlotController {
 				break;
 			case CLOSED:
 				aantalPogingen++;
-				logTekst = "Poging " + aantalPogingen + " " + slot.getSlotKombinatie() + " FOUTE CODE!";
-				boolean isGeheimGevonden = slot.isGeheimGevonden();
-				if (isGeheimGevonden) {
-					// TODO
+				logTekst = "Poging " + aantalPogingen + " " + slot.getSlotKombinatie();
+				if (slot.isGeheimGevonden()) {
+					logTekst += "\nCorrecte CODE! De kluis gaat open.";
+					slotStatus = ESlotStatus.OPEN;
 				} else {
+					logTekst +=  " FOUTE CODE!";
 					if (aantalPogingen == MAX_AANTAL_POGINGEN) {
-						// TODO
+						logTekst +=  "\nKLUIS GEBLOKKEERD!";
+						slotStatus = ESlotStatus.BLOCKED;
 					}
 				}
 				break;
