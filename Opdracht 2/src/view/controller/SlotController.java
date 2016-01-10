@@ -74,6 +74,7 @@ public class SlotController {
 				if (slot.isGeheimGevonden()) {
 					logTekst += "\nCorrecte CODE! De kluis gaat open.";
 					slotStatus = ESlotStatus.OPEN;
+					bedieningsPanel.openKluis();
 					bedieningsPanel.setTekstForControleButton("SLUIT KLUIS");
 					bedieningsPanel.setSlotButtonsActief(false);
 				} else {
