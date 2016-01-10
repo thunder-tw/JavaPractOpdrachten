@@ -63,22 +63,28 @@ public class SlotController {
 				bedieningsPanel.setTekstForControleButton("OPEN KLUIS");
 				slot.resetTellers();
 				resetTellers();
+				aantalPogingen = 0;
 				bedieningsPanel.setSlotButtonsActief(true);
+				bedieningsPanel.resetLogTekst();
 				logTekst = "Kluis dicht";
 				break;
 			case CLOSED:
 				aantalPogingen++;
-				logTekst = "Poging " + aantalPogingen + " " + slot.getSlotKombinatie();
+				logTekst = "Poging " + aantalPogingen; //+ " " + slot.getSlotKombinatie();
 				if (slot.isGeheimGevonden()) {
 					logTekst += "\nCorrecte CODE! De kluis gaat open.";
 					slotStatus = ESlotStatus.OPEN;
+					bedieningsPanel.setTekstForControleButton("SLUIT KLUIS");
+					bedieningsPanel.setSlotButtonsActief(false);
 				} else {
 					logTekst +=  " FOUTE CODE!";
 					if (aantalPogingen == MAX_AANTAL_POGINGEN) {
 						logTekst +=  "\nKLUIS GEBLOKKEERD!";
 						slotStatus = ESlotStatus.BLOCKED;
+						bedieningsPanel.setTekstForControleButton("Deblokkeren");
+						bedieningsPanel.setSlotButtonsActief(false);
 					}
-				}
+				}	
 				break;
 			case BLOCKED:
 				logTekst = "Deblokkering slot mislukt";
@@ -88,8 +94,9 @@ public class SlotController {
 					bedieningsPanel.setTekstForControleButton("OPEN KLUIS");
 					slot.resetTellers();
 					resetTellers();
-					bedieningsPanel.setSlotButtonsActief(true);
 					aantalPogingen = 0;
+					bedieningsPanel.setSlotButtonsActief(true);
+					bedieningsPanel.resetLogTekst();
 					logTekst = "Slot succesvol gedeblokkeerd";
 				}
 			}

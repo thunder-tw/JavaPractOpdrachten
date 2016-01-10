@@ -59,6 +59,8 @@ public class Slot {
 	 */
 	public void updateHuidigeWaardeTeller(int i)
 	{
+		if( tellers.size() <= i || i < 0 )
+			throw new IllegalArgumentException("foutieve teller index " + i + " / " + tellers.size() );
 		tellers.get(i).updateHuidigeWaarde();
 	}
 	
@@ -90,6 +92,10 @@ public class Slot {
 	 */
 	public void resetTellers()
 	{
-		tellers = new ArrayList<Teller>();
+		//tellers = new ArrayList<Teller>();
+		for ( Teller teller : tellers )
+		{
+			teller.resetHuidigeWaarde();
+		}
 	}
 }
